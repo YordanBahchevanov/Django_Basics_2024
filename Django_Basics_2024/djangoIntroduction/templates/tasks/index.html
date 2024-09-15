@@ -5,7 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>TASKS</h1>
+    <h1>Tasks</h1>
+
+    {% if tasks %}
+        <p>You have {{ tasks|length }} tasks</p>
+    {% endif %}
+
+    <form method="get" action="/">
+        <input type="text" name="title_filter" value={{ title_filter }} placeholder="Search">
+        <button type="submit">Search</button>
+    </form>
+
     <ul>
         {% for task in tasks %}
             <li>{{ task.name }} - {{ task.created_at }}</li>
