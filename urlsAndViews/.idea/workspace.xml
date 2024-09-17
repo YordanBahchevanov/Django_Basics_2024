@@ -5,25 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c17938aa-7e8e-4c5f-95fd-59dc0fc255d2" name="Changes" comment="Django URLs and Views">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/urlsAndViews.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/urlsAndViews/departments/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/urlsAndViews/departments/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/urlsAndViews/departments/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/urlsAndViews/departments/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/urlsAndViews/departments/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/urlsAndViews/departments/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/urlsAndViews/departments/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/urlsAndViews/departments/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/departments/name_template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/urlsAndViews/departments/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/urlsAndViews/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/urlsAndViews/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/urlsAndViews/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/urlsAndViews/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urlsAndViews/departments/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/urlsAndViews/departments/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urlsAndViews/departments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/urlsAndViews/departments/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urlsAndViews/departments/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/urlsAndViews/departments/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urlsAndViews/departments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/urlsAndViews/departments/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +27,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2mA7Ev9qTNpOkHsJlt0y8fjfDmY" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -58,6 +49,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -108,7 +100,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726507419239</updated>
-      <workItem from="1726507440957" duration="3488000" />
+      <workItem from="1726507440957" duration="4231000" />
+      <workItem from="1726595979072" duration="6335000" />
     </task>
     <task id="LOCAL-00001" summary="Django URLs and Views">
       <option name="closed" value="true" />
@@ -118,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726507496108</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Django URLs and Views">
+      <option name="closed" value="true" />
+      <created>1726513098930</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726513098930</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
