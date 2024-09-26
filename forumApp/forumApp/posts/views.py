@@ -1,22 +1,15 @@
 from datetime import datetime
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from forumApp.posts.forms import PostForm
 
 
 def index(request):
 
     context = {
-        "current_time": datetime.now(),
-        "some_text": "Hello my name is Yordan, and I am and architect",
-        "another_text": "Hi",
-        "users": [
-            "Ivan",
-            "dancho",
-            "Dani",
-            "mecho",
-            "Pooh",
-        ]
+        "my_form": "",
     }
 
     return render(request, 'base.html', context)
@@ -48,3 +41,34 @@ def dashboard(request):
     }
 
     return render(request, 'posts/dashboard.html', context)
+
+
+def add_post(request):
+    form = PostForm(request.POST or None)
+
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('dash')
+
+    context = {
+        "form": form,
+    }
+
+    return render(request, 'posts/add-post.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
