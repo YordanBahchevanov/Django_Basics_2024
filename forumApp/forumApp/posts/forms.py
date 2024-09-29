@@ -9,6 +9,36 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = "__all__"
 
+
+class PostCreateForm(PostForm):
+    pass
+
+
+class PostEditForm(PostForm):
+    pass
+
+
+class PostDeleteForm(PostForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        for field in self.fields:
+            self.fields[field].disabled = True
+
+
+class SearchForm(forms.Form):
+    query = forms.CharField(
+        label='',
+        required=False,
+        max_length=100,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Search for a post...',
+            }
+        )
+    )
+
+
 # class PostForm(forms.Form):
 #     title = forms.CharField(
 #         max_length=100,
