@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 from forumApp.posts.forms import PostForm
+from forumApp.posts.models import Post
 
 
 def index(request):
@@ -18,26 +19,7 @@ def index(request):
 def dashboard(request):
 
     context = {
-        "posts": [
-            {
-                "title": "How to create django project?",
-                "author": "Yordan",
-                "content": "I am learning how to create django project",
-                "created_at": datetime.now(),
-            },
-            {
-                "title": "How to create django project 1?",
-                "author": "Daniela",
-                "content": "",
-                "created_at": datetime.now(),
-            },
-            {
-                "title": "How to create django project 2?",
-                "author": "",
-                "content": "I am **learning** how to create django project",
-                "created_at": datetime.now(),
-            }
-        ]
+        "posts": Post.objects.all(),
     }
 
     return render(request, 'posts/dashboard.html', context)

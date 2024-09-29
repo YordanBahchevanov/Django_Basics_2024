@@ -15,7 +15,8 @@
 <body>
     <form action="{% url 'add-post' %}" method="post">
         {{ form }}
-        <button>Submit</button>
+        {% csrf_token %}
+        <button class="button-9">Submit</button>
     </form>
 
 </body>
