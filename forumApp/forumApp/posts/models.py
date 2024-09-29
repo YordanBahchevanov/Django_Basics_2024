@@ -13,7 +13,7 @@ class Post(models.Model):
 
     content = models.TextField(
         validators=(
-            BadLanguageValidator,
+            BadLanguageValidator(),
         )
     )
 
