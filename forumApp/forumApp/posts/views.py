@@ -1,9 +1,5 @@
-from datetime import datetime
-
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
-
-from forumApp.posts.forms import PostForm, PostCreateForm, PostDeleteForm, SearchForm, PostEditForm
+from forumApp.posts.forms import PostCreateForm, PostDeleteForm, SearchForm, PostEditForm
 from forumApp.posts.models import Post
 
 
@@ -12,7 +8,7 @@ def index(request):
         "my_form": "",
     }
 
-    return render(request, 'common/base.html', context)
+    return render(request, 'common/index.html', context)
 
 
 def dashboard(request):
