@@ -2,7 +2,7 @@ from django import forms
 
 from forumApp.posts.choices import LanguageChoice
 from forumApp.posts.mixins import DisableFieldsMixin
-from forumApp.posts.models import Post
+from forumApp.posts.models import Post, Comment
 
 
 class PostForm(forms.ModelForm):
@@ -45,6 +45,7 @@ class SearchForm(forms.Form):
         )
     )
 
+
 # class PostForm(forms.Form):
 #     title = forms.CharField(
 #         max_length=100,
@@ -63,3 +64,27 @@ class SearchForm(forms.Form):
 #     languages = forms.ChoiceField(
 #         choices=LanguageChoice.choices,
 #     )
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = (
+            'author',
+            'content',
+        )
+
+        labels = {
+            'author': '',
+            'content': '',
+        }
+
+        error_messages = {
+            'author': {
+                'required': 'Author name is required!',
+            },
+            'content': {
+                'required': 'Content is required!',
+            }
+        }
+
