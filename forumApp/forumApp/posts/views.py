@@ -1,11 +1,22 @@
+from django.forms import modelform_factory
 from django.shortcuts import render, redirect
 from forumApp.posts.forms import PostCreateForm, PostDeleteForm, SearchForm, PostEditForm
 from forumApp.posts.models import Post
 
 
 def index(request):
+    post_form = modelform_factory(
+        Post,
+        fields=(
+            'title',
+            'content',
+            'author',
+            'languages',
+        )
+    )
+
     context = {
-        "my_form": "",
+        "my_form": post_form,
     }
 
     return render(request, 'common/index.html', context)
