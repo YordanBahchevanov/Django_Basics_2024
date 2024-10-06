@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import formset_factory
 
 from forumApp.posts.choices import LanguageChoice
 from forumApp.posts.mixins import DisableFieldsMixin
@@ -45,6 +46,13 @@ class SearchForm(forms.Form):
         )
     )
 
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #
+    #     self.helper = FormHelper()
+    #     self.helper.form_method = 'get'
+    #     self.helper.form_class = 'form-inline'
+
 
 # class PostForm(forms.Form):
 #     title = forms.CharField(
@@ -88,3 +96,19 @@ class CommentForm(forms.ModelForm):
             }
         }
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['author'].widget.attrs.update({
+            'class': 'form-control',
+            'placeholder': 'Your name',
+        })
+
+        self.fields['content'].widget.attrs.update({
+            'class': 'form-control',
+            'placeholder': 'Add message...',
+            'rows': 1,
+        })
+
+
+CommentFormSet = formset_factory(CommentForm, extra=1)
