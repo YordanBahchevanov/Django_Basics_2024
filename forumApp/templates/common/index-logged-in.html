@@ -3,9 +3,12 @@
 {% load uppercase %}
 
 {% block content %}
+
     {% uppercase %}
         <h1>Hello user!</h1>
     {% enduppercase %}
+
+    <h2>You are logged in</h2>
 
     {{ static_time|time:"s" }}
     {{ dynamic_time|time:"s" }}

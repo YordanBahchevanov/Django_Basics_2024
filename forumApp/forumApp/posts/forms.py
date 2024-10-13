@@ -6,7 +6,7 @@ from forumApp.posts.mixins import DisableFieldsMixin
 from forumApp.posts.models import Post, Comment
 
 
-class PostForm(forms.ModelForm):
+class PostBaseForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = "__all__"
@@ -22,15 +22,15 @@ class PostForm(forms.ModelForm):
         }
 
 
-class PostCreateForm(PostForm):
+class PostCreateForm(PostBaseForm):
     pass
 
 
-class PostEditForm(PostForm):
+class PostEditForm(PostBaseForm):
     pass
 
 
-class PostDeleteForm(PostForm, DisableFieldsMixin):
+class PostDeleteForm(PostBaseForm, DisableFieldsMixin):
     disabled_fields = ('__all__',)
 
 

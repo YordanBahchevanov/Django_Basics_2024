@@ -1,3 +1,5 @@
+import os
+
 from django.db import models
 
 from forumApp.posts.choices import LanguageChoice
@@ -36,6 +38,18 @@ class Post(models.Model):
         blank=True,
         null=True,
     )
+
+    def delete(self, *args, **kwargs):
+        if self.image:
+            # Check if the image exists in the local filesystem
+            if os.path.isfile(self.image.path):
+                os.remove(self.image.path)
+
+        # Proceed with deleting the Post instance
+        super().delete(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
 
 
 class Comment(models.Model):
