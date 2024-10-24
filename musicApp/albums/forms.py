@@ -1,6 +1,7 @@
 from django import forms
 
 from albums.models import Album
+from musicApp.mixins import PlaceholderMixin, ReadOnlyMixin
 
 
 class AlbumBaseForm(forms.ModelForm):
@@ -9,13 +10,13 @@ class AlbumBaseForm(forms.ModelForm):
         exclude = ['owner']
 
 
-class AlbumCreateForm(AlbumBaseForm):
+class AlbumCreateForm(PlaceholderMixin, AlbumBaseForm):
     pass
 
 
-class AlbumEditForm(AlbumBaseForm):
+class AlbumEditForm(PlaceholderMixin, AlbumBaseForm):
     pass
 
 
-class AlbumDeleteForm(AlbumBaseForm):
-    pass
+class AlbumDeleteForm(ReadOnlyMixin, AlbumBaseForm):
+    readonly_fields = ['album_name', 'artist', 'genre', 'price', 'description']
