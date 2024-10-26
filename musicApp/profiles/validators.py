@@ -21,13 +21,13 @@ class AlphaNumericValidator:
         else:
             self.__message = value
 
-    # def __call__(self, value: str, *args, **kwargs):
-    #     if "-" in value or value.lower() != slugify(value):
-    #         raise ValidationError(self.message)
-
     def __call__(self, value: str, *args, **kwargs):
-        # Regex pattern to allow only letters, numbers, and underscores
-        pattern = r'^[\w]+$'  # \w matches [a-zA-Z0-9_]
-
-        if not re.match(pattern, value):
+        if "-" in value or value.lower() != slugify(value):
             raise ValidationError(self.message)
+
+    # def __call__(self, value: str, *args, **kwargs):
+    #     # Regex pattern to allow only letters, numbers, and underscores
+    #     pattern = r'^[\w]+$'  # \w matches [a-zA-Z0-9_]
+    #
+    #     if not re.match(pattern, value):
+    #         raise ValidationError(self.message)

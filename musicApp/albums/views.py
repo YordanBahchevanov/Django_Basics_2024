@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DetailView, DeleteView
 
@@ -16,6 +16,23 @@ class AlbumCreateView(CreateView):
     def form_valid(self, form):
         form.instance.owner = get_user_obj()
         return super().form_valid(form)
+
+
+# def create_album(request):
+#     form = AlbumCreateForm(request.POST or None, request.FILES or None)
+#
+#     if request.method == "POST":
+#         if form.is_valid():
+#             album = form.save(commit=False)
+#             album.owner = get_user_obj()
+#             album.save()
+#             return redirect('home')
+#
+#     context = {
+#         "form": form,
+#     }
+#
+#     return render(request, 'albums/album-add.html', context)
 
 
 class AlbumDetailsView(DetailView):

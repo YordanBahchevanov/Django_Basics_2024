@@ -38,6 +38,4 @@ class Album(models.Model):
         related_name='albums',
     )
 
-class Car(models.Model):
-    engine_type = models.CharField()
 
