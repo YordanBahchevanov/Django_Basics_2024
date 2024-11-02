@@ -1,0 +1,31 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+    <!-- Dashboard page -->
+    <!-- Display a heading if there are posts -->
+    {% if posts %}
+        <h2>Published Posts</h2>
+    {% else %}
+        <!-- Display a heading if there are NO posts -->
+        <h2>No published posts yet.</h2>
+    {% endif %}
+
+    <section id="dashboard">
+        <!-- Display a div with information about each post (if any) -->
+
+        {% for post in posts %}
+            <div class="post">
+                <img
+                        src="{{ post.image_url }}"
+                        alt="Cover Image"
+                />
+                <h3 class="title">{{ post.title }}</h3>
+                <p class="description">{{ post.content|truncatewords:3 }}</p>
+                <a class="details-btn" href="{% url 'post-details' post.pk %}">See More</a>
+            </div>
+        {% endfor %}
+
+    </section>
+{% endblock %}
+
+
